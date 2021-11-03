@@ -1,0 +1,1 @@
+// .includes funciona tipo "like"
