@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        document.querySelector('#primeiro').classList.add('destaque')
+        
+        const selecionar = seletor => 
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        const deselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+
+        //transformando pra array
+        // const arraySelecao = Array.from(selecionar)
+        selecionar('div')
+
+        deselecionar('div')
+        selecionar('.terceiro.ultimo') // aqui passa o parametro como e
+        
+        deselecionar('*')
+        selecionar(':not(#primeiro)') // pseudoclasse - seleciona tudo q n é o primeioro
+        deselecionar('*')
+        selecionar('div:not(#primeiro)') // seleciona todas as divs q não tem #primeiro, mas somente as divs
+
+        deselecionar('*')
+        selecionar(':nth-child(1)') // seleciona o primeiro filho de cada elemento
+
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)') //pseudoclasse que pega o primeiro da div
+
+        deselecionar('*')
+        selecionar('[wb-attrib]') //seleciona pelo atributo :)
+    
+    </script>
+</body>
+</html>
