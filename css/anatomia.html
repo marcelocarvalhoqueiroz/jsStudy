@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* multiplos valores */
+            border: solid 5px navy; /* shorthand property */
+            background-color: #444; /* dá pra usar rgb ou rgba tbm */
+            font-family: Roboto, sans-serif;
+            /* funções */
+            width: calc(100% - 40px);
+        }
+        /* Usando uma pseudo classe */
+        .seletor:hover {
+            background-color: chocolate;
+            color: black;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        /* Pseudo-elementos */
+
+        .seletor:first-letter{
+            font-size: 60px;
+        }
+
+        .seletor:hover::first-letter{
+            font-size: 100px;
+        }
+
+        /* padrão de nomenclatura? */
+        /* dash-case ou camelCase */
+        /* Os nomes das classes são case sensitive */
+        /* dash-case (first-letter), camelCase (firstLetter), snake_case (first_letter) */
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

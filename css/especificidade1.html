@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        p {
+            background-color: #aaa;
+        }
+
+        .observacao {
+            background-color: aquamarine;
+            border: solid 4px;
+            padding: 20px!important;
+            font-size: 40px;
+        }
+
+        p.observacao{
+            background: linear-gradient(to right, brown, chocolate);
+            border: double 4px;
+            padding: 5px 60px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

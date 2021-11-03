@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%);
+            grid-template-columns: repeat(12, 8.33%);
+            grid-template-columns: repeat(11, 100px) 100px;
+            /* minmax(100px, 300px) dá pra usar isso dentro de grid-template */
+            grid-template-columns: 200px 20% 1fr;
+            /* acima determina 3 valores, um fixo, um relativo e o fr é fragmento, pega o resto */
+            grid-template-columns: 3fr 6fr 3fr;
+            /* a primeira coluna vai pegar 3 partes das 12, a segunda 6 das 12, e a terceira 3 das 12 também  */
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr;
+            /* como a divisão de colunas foi 12, assim que não determinar o resto das linhas, elas vão pegar o que sobrar e dividir  */
+            grid-template-rows: 100px auto;
+            /* o auto parece ser o default */
+        }
+
+        .d8 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-column-end: span 2;
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-row-end: span 2;
+        }
+
+        .d10, .d11 {
+            /* podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1;
+        }
+
+        .d10 {
+            /* o z-index padrão é 0 aparentemente, quanto maior, maior a preferencia para ficar na frente */
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>
