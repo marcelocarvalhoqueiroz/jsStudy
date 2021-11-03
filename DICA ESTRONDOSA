@@ -1,0 +1,11 @@
+para saber se alguma função existe em um determinado atributo, basta chamar a função sem pedir para executar
+
+exemplo:
+
+classes.map
+
+se no console der undefined, é pq não tem :)
+
+
+
+e spred é [...variavel]
